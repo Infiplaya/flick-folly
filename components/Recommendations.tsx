@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 
 export const Recommendations = () => {
   const [recommendations, setRecommendations] = useState<String[]>();
-  let [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const fetchedRecommendations = useRecommendationStore(
     (state) => state.recommendations
   );
