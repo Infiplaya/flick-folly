@@ -51,7 +51,7 @@ export const Recommendations = () => {
             <div className="fixed inset-0 bg-black bg-opacity-50" />
           </Transition.Child>
 
-          <div className="fixed right-0 top-0 h-full overflow-y-auto bg-neutral-800 w-1/5">
+          <div className="fixed right-0 top-0 h-full overflow-y-auto bg-neutral-800 w-full lg:w-1/4">
             <div className="flex min-h-full justify-center text-center">
               <Transition.Child
                 as={Fragment}
@@ -62,8 +62,26 @@ export const Recommendations = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl p-4 h-screen text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title className="text-3xl">Favorites</Dialog.Title>
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl p-4 h-screen text-left align-middle transition-all">
+                  <Dialog.Title className="text-3xl flex items-center justify-between">
+                    Favorites{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-9 h-9 hover:bg-neutral-700 rounded-full p-1"
+                      role="button"
+                      onClick={closeModal}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </Dialog.Title>
                   {recommendations?.length !== 0 ? (
                     <ul>
                       {recommendations?.map((r, i) => (
