@@ -31,7 +31,7 @@ export const Recommendations = () => {
         <button
           type="button"
           onClick={openModal}
-          className="font-medium text-neutral-100"
+          className="font-medium text-neutral-100 p-2 hover:bg-neutral-800 rounded-xl"
         >
           Favorites
         </button>
@@ -64,7 +64,7 @@ export const Recommendations = () => {
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl p-4 h-screen text-left align-middle transition-all">
                   <Dialog.Title className="text-3xl flex items-center justify-between">
-                    Favorites{" "}
+                    Your favorites{" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
