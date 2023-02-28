@@ -27,7 +27,7 @@ export const Recommendations = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center">
+      <div className="flex space-x-3 items-center justify-center">
         <button
           type="button"
           onClick={openModal}
