@@ -10,8 +10,8 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export type VibeType = "Feel-Good" | "Romantic" | "Funny";
-export type ShowType = "TV Show" | "Movie" | "Both";
+export type VibeType = "Feel-Good" | "Romantic" | "Funny" | "Mind Blowing" | "Thrilling" | "Weird";
+export type ShowType = "TV Show" | "Movie" | "Both" | "Anime";
 
 interface DropDownProps {
   value: VibeType | ShowType;
@@ -21,9 +21,9 @@ interface DropDownProps {
 export function Dropdown({ value, setValue }: DropDownProps) {
   let values: VibeType[] | ShowType[];
 
-  ["Romantic", "Feel-Good", "Funny"].includes(value)
-    ? (values = ["Romantic", "Feel-Good", "Funny"])
-    : (values = ["TV Show", "Movie", "Both"]);
+  ["Romantic", "Feel-Good", "Funny", "Mind Blowing", "Thrilling", "Weird"].includes(value)
+    ? (values = ["Romantic", "Feel-Good", "Funny", "Mind Blowing", "Thrilling", "Weird"])
+    : (values = ["TV Show", "Movie", "Both", "Anime"]);
 
   return (
     <Menu as="div" className="relative block text-left w-full">

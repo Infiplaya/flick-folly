@@ -10,7 +10,6 @@ import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import { Dropdown } from "../components/Dropdown";
 import { useRecommendationStore } from "../store";
-import { Recommendations } from "../components/Recommendations";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
