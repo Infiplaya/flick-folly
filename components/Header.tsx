@@ -3,9 +3,9 @@ import { Recommendations } from "./Recommendations";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center w-full mt-5 border-b border-neutral-500 pb-7 sm:px-4 px-2">
-      <Link href="/" className="flex space-x-3">
-        <h1 className="sm:text-4xl text-blue-500 text-2xl font-bold ml-2 tracking-tight">
+    <header className="flex items-baseline justify-between w-full mt-5 border-b-2 border-neutral-800 pb-7 sm:px-4 px-2">
+      <Link href="/">
+        <h1 className="sm:text-4xl tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-2xl font-bold ml-2">
           Flick Folly
         </h1>
       </Link>

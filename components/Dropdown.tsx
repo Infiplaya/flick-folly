@@ -28,7 +28,7 @@ export function Dropdown({ value, setValue }: DropDownProps) {
   return (
     <Menu as="div" className="relative block text-left w-full">
       <div>
-        <Menu.Button className="inline-flex w-full justify-between items-center rounded-md border border-neutral-700 bg-neutral-800 px-4 py-2 text-neutral-200 shadow-sm hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <Menu.Button className="inline-flex w-full justify-between items-center rounded-md border border-neutral-700 bg-neutral-800 px-4 py-2 text-neutral-200 shadow-sm hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
           {value}
           <ChevronUpIcon
             className="-mr-1 ml-2 h-5 w-5 ui-open:hidden"
@@ -51,7 +51,7 @@ export function Dropdown({ value, setValue }: DropDownProps) {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className="absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-neutral-800 shadow-lg shadow-neutral-700 ring-1 ring-blue-500 ring-opacity-5 focus:outline-none"
+          className="absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-neutral-800 shadow-lg shadow-neutral-700 ring-1 ring-purple-500 ring-opacity-5 focus:outline-none"
           key={value}
         >
           <div className="">
@@ -64,7 +64,7 @@ export function Dropdown({ value, setValue }: DropDownProps) {
                       active
                         ? "bg-neutral-700 text-neutral-100"
                         : "text-neutral-200",
-                      value === valueItem ? "bg-neutral-800" : "",
+                      value === valueItem ? "bg-purple-600/20" : "bg-neutral-800",
                       "px-4 py-2 text-sm w-full text-left flex items-center space-x-2 justify-between"
                     )}
                   >

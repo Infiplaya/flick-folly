@@ -27,16 +27,13 @@ export const Recommendations = () => {
 
   return (
     <>
-      <div className="flex space-x-3 items-center justify-center">
         <button
           type="button"
           onClick={openModal}
-          className="font-medium text-neutral-100 p-2 hover:bg-neutral-800 rounded-xl"
+          className="font-medium text-neutral-100 hover:bg-neutral-800 rounded-xl px-6 py-3 "
         >
           Favorites
         </button>
-      </div>
-
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child

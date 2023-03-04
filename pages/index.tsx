@@ -17,12 +17,10 @@ const Home: NextPage = () => {
   const [vibe, setVibe] = useState<VibeType>("Feel-Good");
   const [type, setType] = useState<ShowType>("Movie");
   const [generatedRecommendations, setGeneratedRecommendations] =
-    useState<String>("");
+    useState("");
   const addRecommendation = useRecommendationStore(
     (state) => state.addRecommendation
   );
-
-  console.log("Streamed response: ", generatedRecommendations);
 
   const prompt =
     vibe === "Funny"
@@ -81,12 +79,12 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-        <h1 className="sm:text-6xl text-4xl max-w-2xl font-bold text-neutral-100">
-          Don't know what to <span className="text-blue-500">watch</span>? Get
+        <h1 className="sm:text-7xl tracking-wide text-4xl max-w-4xl font-bold text-neutral-100">
+          Don't know what to <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">watch</span>? Get
           some recommendations!
         </h1>
-        <div className="max-w-xl w-full">
-          <div className="flex mb-5 mt-10 items-center space-x-3">
+        <div className="max-w-2xl mt-20 w-full">
+          <div className="flex mb-5 items-center space-x-3">
             <p className="text-left font-medium text-lg">Select type.</p>
           </div>
           <div className="block">
@@ -114,7 +112,7 @@ const Home: NextPage = () => {
             value={details}
             onChange={(e) => setDetails(e.target.value)}
             rows={4}
-            className="w-full rounded-md bg-neutral-800 border-neutral-700 placeholder:text-neutral-400 shadow-sm focus:border-blue-500 focus:ring-blue-500 my-5"
+            className="w-full rounded-md bg-neutral-800 border-neutral-700 placeholder:text-neutral-400 shadow-sm focus:border-purple-500 focus:ring-purple-500 my-5"
             placeholder={
               "e.g. Teenager balance his life as an ordinary high school student with his superhero alter-ego"
             }
@@ -122,7 +120,7 @@ const Home: NextPage = () => {
 
           {!loading && (
             <button
-              className="bg-blue-500 rounded-xl inline-flex items-center justify-center gap-1 text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-blue-600 w-full"
+              className="bg-purple-600 rounded-xl inline-flex items-center justify-center gap-1 text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-purple-700 w-full"
               onClick={(e) => generateRecommendation(e)}
             >
               Check out recommendations{" "}
@@ -144,7 +142,7 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="bg-blue-600 rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-blue-600/80 w-full"
+              className="bg-purple-600 rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-purple-600/80 w-full"
               disabled
             >
               <LoadingDots color="white" style="large" />
@@ -159,7 +157,7 @@ const Home: NextPage = () => {
         <hr className="h-px bg-neutral-700 border-1 dark:bg-neutral-900" />
         <ResizablePanel>
           <AnimatePresence mode="wait">
-            <motion.div className="space-y-10 my-10">
+            <motion.div className="space-y-10 my-20">
               {generatedRecommendations && (
                 <>
                   <div>
@@ -178,9 +176,16 @@ const Home: NextPage = () => {
                               className="bg-neutral-800 rounded-xl shadow-md p-4 hover:bg-neutral-700 transition cursor-copy border border-neutral-700"
                               onClick={() => {
                                 navigator.clipboard.writeText(generatedBio);
-                                toast("Recommendation copied to clipboard", {
-                                  icon: "✂️",
-                                });
+                                toast.custom((t) => (
+                                  <div
+                                    className={`${
+                                      t.visible ? 'animate-enter' : 'animate-leave'
+                                    } max-w-md w-full bg-neutral-800 items-center justify-center shadow-lg shadow-purple-700/50 rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+                                  >
+                                    
+                                    <p className="p-5 text-center font-semibold">Recommendation coppied to your clipboard!</p>
+                                  </div>
+                                ))
                               }}
                               key={generatedBio}
                             >
@@ -193,7 +198,7 @@ const Home: NextPage = () => {
                                   "Recommendation added to your favorites!"
                                 );
                               }}
-                              className="bg-blue-500 rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-blue-600 "
+                              className="bg-purple-600 rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-purple-700 "
                             >
                               Add to Favorites
                             </button>
