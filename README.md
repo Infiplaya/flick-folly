@@ -1,4 +1,3 @@
-# [flick-folly.vercel.app](https://www.flick-folly.vercel.app/)
 
 ## Introduction
 
