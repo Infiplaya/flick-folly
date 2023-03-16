@@ -4,6 +4,22 @@
 
 So if you are not living in a cage, there is a big hype around AI at this point. I got inspired by [Nutlope](https://github.com/Nutlope/twitterbio) idea to create web application that uses OpenAI for generating twitter bios. But in my app I use AI to give a user 3 recommendations of TV shows or movies, based on his preferences.
 
+
+## Getting Started
+
+Prerequisite:
+
+- Open AI Api Key
+- npm
+
+Setup
+
+1. Clone repo
+1. `npm install`
+1. Create `.env` and place here your OPEN AI Api Key file if one does not already exist
+1. Run dev server `npm run dev`
+
+
 ### Unique features
 
 One unique feature of my application is that a user can save recommendation he likes to a list of favorites. The favorites are kept in local storage. I have implemented this functionality with Zustand state management library.
